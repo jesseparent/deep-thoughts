@@ -22,9 +22,7 @@ const Profile = () => {
   const [addFriend] = useMutation(ADD_FRIEND);
 
   const { data: loggedInUser } = useQuery(QUERY_ME_BASIC);
-  // console.log(loggedInUser.me) //!loggedInUser.friends.includes(user.userName) &&
-  // console.log(user.username)
-  // console.log(!loggedInUser.me.friends.find(obj => obj.username === user.username))
+
   // redirect to personal profile page if username is the logged-in user's
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/profile" />;
